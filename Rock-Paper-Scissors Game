@@ -1,0 +1,50 @@
+#Rock Paper Scissor Game
+import random
+l=['Rock','Paper','Scissor']
+
+loop = True
+point = 0
+while loop is True:
+    user=input("Enter R for Rock,P for Paper and S for Scissor")
+    
+    comp = random.choice(l)
+    print(comp,end=" X ")
+    
+    if user =='R':
+        print(' Rock','\n')
+        if comp=='Rock':         
+            print('Tie')
+        elif comp=='Paper':
+            print("Loss")
+        elif comp=="Scissor":
+            point+=1
+            print("Win \t Points = ",point)
+            
+            
+    elif user =='P':
+        print(' Paper','\n')
+        if comp=='Paper':         
+            print('Tie')
+        elif comp=='Scissor':
+            print("Loss")
+        elif comp=="Rock":
+             point+=1
+             print("Win \t Points = ",point)
+           
+            
+    elif user == 'S':
+        print(' Scissor','\n')
+        if comp=='Scissor':         
+            print('Tie')
+        elif comp=='Rock':
+            print("Loss")
+        elif comp=='Paper':
+            point+=1
+            print("Win \t Points = ",point)
+    else:
+        print("\n NO VALID INPUT FOUND")
+
+            
+    ch = input('Continue? (Enter N to end game): ')
+    if ch == 'N':
+        loop = False
